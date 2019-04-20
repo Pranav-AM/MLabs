@@ -2,5 +2,5 @@
     ```bash
     $ python main.py
     ```
-
+* The output images are saved at [MLabs/data/images](../data/images)
 
