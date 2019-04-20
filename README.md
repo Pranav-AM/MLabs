@@ -1,10 +1,22 @@
-# MLabs
-Repo for **MLabs** Automated Shopping Experience project
+## Automated shopping using Neural networks
 
+Use computer vision to automate billing 
+
+<p align = 'center'>
+<img src = 'data/demo/object.jpg' width=30% >
+<img src = 'data/demo/pose.jpg' width=30%>
+<img src = 'data/demo/activity.jpg' width=30%>
+ 
+<img src="data/demo/object.gif" width=20% height="480" />
+<img src="data/demo/pose.gif" width=20% height="480" />
+<img src="data/demo/activity.gif" width=20% height="480" /> 
+<img src="data/demo/final.gif" width=20% height="480" /> 
+</p>
 
 ## Directory structure
     .
     ├── data
+        ├── demo                        # contains demo files
         ├── frames                      # raw images
         ├── labels                      # object detection annotation data
         ├── mod-data                    # activity detection annotation data
@@ -12,23 +24,22 @@ Repo for **MLabs** Automated Shopping Experience project
         └── persondata                  # pose estimation annotation data
     ├── project    
         ├── main.py                     # the system code
-        ├── activity_detection    
-            ├── demo.py                 # code for predicting activity of a sequence
-            ├── main.py                 # activity detection module code
-            └── helper_functions
-        ├── object_detection  
-            ├── train.py                 # object detection module code
-            └── helper_functions
-        └── pose_estimation
-            ├── demo.py                 # pose estimation module code
-            ├── demo.ipynb
-            └── helper_functions
+        ├── activity_detection          # activity detection module code
+        ├── object_detection            # object detection module code
+        └── pose_estimation             # pose estimation module code
     ├── tools                           # annotation tools
     ├── requirements.txt                # pip freeze of anaconda environment
     ├── environment.yml                 # the exported anaconda environment file
     ├── Dockerfile
     └── README.md         
     
+## Project
+
+The project comprises of three modules:
+
+1) [Object Detection](project/activity_detection/)
+2) [Pose Estimation](project/activity_detection/)
+3) [Activity Detection](project/activity_detection/)
 
 ## Getting Started
 
@@ -54,6 +65,11 @@ These instructions will get you a copy of the project up and running on your loc
     ```bash
     $ conda env create -f environment.yml
     ```
+* Activate the environment
+     ```bash
+    $ conda activate MLabs-cpu
+    ```
+    
 * Download the pose estimation model from [here](https://drive.google.com/open?id=1oMOmpI9C_PT6fNbo0Zk2j_4GDK2Dq09x).
 
 * Now, type this command to go to directory where the downloaded model should be placed.
@@ -61,6 +77,12 @@ These instructions will get you a copy of the project up and running on your loc
     $ cd project/pose_estimation/model
     ```
 * Place the downloaded model in the current directory.
+
+* To try running the project, goto the projects folder
+    ```bash
+    $ cd ../..
+    $ python main.py
+    ```
 
 <!---
 2) Using Docker 
