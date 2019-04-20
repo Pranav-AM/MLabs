@@ -1,17 +1,18 @@
 from main import *
 
-
-imagedir = '../../data/mod-data'#'/content/drive/My Drive/MLabs/Project/activity_rec/mod-data/'
-labeldir = '../../data/labels'#'/content/drive/My Drive/MLabs/Project/activity_rec/labels'
-persondir = '../../data/persondata'#'/content/drive/My Drive/MLabs/Project/activity_rec/persondata'
+imagedir = './sample_data/mod-data/'
+labeldir = './sample_data/labels/'
+persondir = './sample_data/persondata/'
 
 '''
-Change 3 to another folder in imagedir for predicting
+Change 26 to another folder in imagedir(sample_datadata/mod-data) for predicting
+Options available: 26, 26a, 27, 27a
 '''
 # --------------------------------------------
-directory = os.path.join(imagedir, '3')
+directory = os.path.join(imagedir, '26')
 # --------------------------------------------
 
+print '\n', 'Sequence ', directory.split('/')[-1], ' to predict', '\n'
 
 cursequence = Sequence()
 cursequence.dirName = directory
@@ -33,7 +34,7 @@ for image in imageList:
     
     
     try:
-        location = labeldir +'/'+ labelname
+        location = labeldir + '/' + labelname
         #print('location', location)
         curimage.labelPath = location
         labelFile = open(location , 'r')
@@ -88,7 +89,8 @@ for image in imageList:
 
 cursequence.imageDataList = imgdatalist  
 
-#print(len(cursequence.imageDataList[0].personList), cursequence.imageDataList[0].personList[0].name)
+#print(cursequence.imageDataList[0].personList, cursequence.imageDataList[0].personList[0].name)
+
 
 features = generate_featuremap_lstm(cursequence)
 
@@ -100,9 +102,6 @@ for it in range(0, len(features)):
 features = normalize_time_series(all_features)
 
 model = load_trained_model()
-
-
-#print(to_categorical_tensor(labels, 4))
 
 test_pred = model.predict(convert_to_lstm_format(features))
 

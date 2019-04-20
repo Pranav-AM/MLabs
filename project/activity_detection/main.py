@@ -461,7 +461,7 @@ from numpy import array
 def convert_to_lstm_format(all_features):
         npfeatures = array(all_features) 	
         features = npfeatures.reshape(len(all_features), 5, 52)
-        print(features.shape)
+        print 'Shape of features: ', features.shape
         return npfeatures      
 
 def normalize_time_series(all_features):
@@ -484,7 +484,7 @@ def normalize_time_series(all_features):
         if (idx + 1) % 5 ==0:
             final_list.append(lis)
             lis=[]
-    print("Normalized")
+    #print("Normalized")
     return final_list
 
 
@@ -505,13 +505,14 @@ def fit_model(train_X, train_Y, no_of_frames = 5):
     model.fit(train_X, train_Y, epochs=150, batch_size=5, verbose=False)#verbose=2)   
     
     end = time.time()
-    print('Time: ', end - start)
+    print 'Time: ', end - start
     return(model)
     
 def train_model(train_d,train_l):
     model = fit_model(train_d, train_l)
     ####################################################################################################
     model.save(SAVED_MODEL)
+    print('Saving model')
     ####################################################################################################
     return model
 
@@ -555,7 +556,7 @@ def train_test_split(features, labels):
             if it in test_index:
                 test_d.append(features[it])
                 test_l.append(labels[it])
-        print("done")
+        #print("done")
 
         train_d = convert_to_lstm_format(train_d)
         test_d = convert_to_lstm_format(test_d)
@@ -567,11 +568,11 @@ def train_test_split(features, labels):
    	#print(TRAIN_MODEL)
 	if(TRAIN_MODEL == 'true'):
             ## training
-	    print 'training model'
+	    print 'Training model'
             model = train_model(train_d, train_l)
 	else:
             ## load pretrained model
-	    #print 'pretrained model'
+	    print 'Using pre-trained model'
             model = load_trained_model() 
 	
     	# evaluate model
@@ -610,7 +611,6 @@ def train_test_split(features, labels):
             cur_matrix = np.insert(cur_matrix, index, np.zeros(cur_matrix.shape[0]), 1)
           
         #print('constructed cur_matrix',  cur_matrix)
-        print('\n')
         '''
         print(train_d.shape, train_l.shape)
         print(train_l, '\n', test_l, '\n')
@@ -622,11 +622,12 @@ def train_test_split(features, labels):
         #print(cur_matrix)
         _,accuracytrain = model.evaluate(train_d, train_l, batch_size=20, verbose=False)#, verbose=2)
         _,accuracytest = model.evaluate(test_d, test_l, batch_size=20, verbose=False)#, verbose=2)
-        print(accuracytrain, accuracytest, '\n')
+        print 'Training accuracy: ', accuracytrain
+	print 'Testing accuracy: ', accuracytest, '\n'
         scores.append(accuracytest*100)
     scores=np.asarray(scores)    
-    print(scores.mean())
-    print(conf_mat)
+    print 'Mean accuracy: ', scores.mean()
+    print 'Confusion matrix: ', '\n', conf_mat
 
 
 if __name__ == "__main__":
