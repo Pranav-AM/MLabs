@@ -36,6 +36,8 @@ The project comprises of three modules:
         ├── activity_detection          # activity detection module code
         ├── object_detection            # object detection module code
         └── pose_estimation             # pose estimation module code
+        ├── slim                        # slim directory to set up object detection module
+        └── setup.py                    # code to set up object detection module
     ├── tools                           # annotation tools
     ├── requirements.txt                # pip freeze of anaconda environment
     ├── environment.yml                 # the exported anaconda environment file
