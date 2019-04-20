@@ -8,6 +8,7 @@
   ```bash
    $ python main.py
    ```
+   The labelled output is created in the final_output directory (with label coordinates in .txt files and labelled images as .jpg files)
 
 # Train and Run New Model:
 
