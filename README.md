@@ -8,6 +8,7 @@ Repo for **MLabs** Automated Shopping Experience project
         ├── frames                      # raw images
         ├── labels                      # object detection annotation data
         ├── mod-data                    # activity detection annotation data
+        ├── images                      # directory for output images
         └── persondata                  # pose estimation annotation data
     ├── project    
         ├── main.py                     # the system code
@@ -53,6 +54,14 @@ These instructions will get you a copy of the project up and running on your loc
     ```bash
     $ conda env create -f environment.yml
     ```
+* Download the pose estimation model from [here](https://drive.google.com/open?id=1oMOmpI9C_PT6fNbo0Zk2j_4GDK2Dq09x).
+
+* Now, type this command to go to directory where the downloaded model should be placed.
+    ```bash
+    $ cd project/pose_estimation/model
+    ```
+* Place the downloaded model in the current directory.
+
 <!---
 2) Using Docker 
 * Install and setup Docker using info [here](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
