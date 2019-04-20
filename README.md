@@ -65,6 +65,11 @@ These instructions will get you a copy of the project up and running on your loc
     ```bash
     $ conda env create -f environment.yml
     ```
+* Activate the environment
+     ```bash
+    $ conda activate MLabs-cpu
+    ```
+    
 * Download the pose estimation model from [here](https://drive.google.com/open?id=1oMOmpI9C_PT6fNbo0Zk2j_4GDK2Dq09x).
 
 * Now, type this command to go to directory where the downloaded model should be placed.
@@ -72,6 +77,12 @@ These instructions will get you a copy of the project up and running on your loc
     $ cd project/pose_estimation/model
     ```
 * Place the downloaded model in the current directory.
+
+* To try running the project, goto the projects folder
+    ```bash
+    $ cd ../..
+    $ python main.py
+    ```
 
 <!---
 2) Using Docker 
