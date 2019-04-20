@@ -2,7 +2,14 @@
 
 * **NOTE**: Please run setup.py and add the project directory to PYTHONPATH (as explained in [MLabs/project/README.md](../README.md)) before commencing.
 
-# Preprocessing and Training:
+# Run Pre-trained Model:
+
+* To run the pre-trained model, run main.py as:
+  ```bash
+   $ python main.py
+   ```
+
+# Train and Run New Model:
 
 * To convert the annotated data from .txt format to .csv, run txt2csv.py as:
   ```bash
@@ -26,10 +33,9 @@
      --trained_checkpoint_prefix training/model.ckpt-xx     
      --output_directory inference_graph
    ```
+   (Here, xx in --trained_checkpoint_prefix training/model.ckpt-xx stands for the number of the latest training checkpoint in the [MLabs/project/object_detection/training](./training) folder.)
 
-* To run the pre-trained model, run main.ipynb in Jupyter Notebook.
-
-* To run the newly trained model, run demo.ipynb in Jupyter Notebook.  
-  
-  
-
+* To run the newly trained model, change MODEL_NAME in line 64 of main.py to 'inference_graph' and run main.py as:
+  ```bash
+   $ python main.py
+   ```
