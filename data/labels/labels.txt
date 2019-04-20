@@ -1,0 +1,8 @@
+1 - handwash
+2 - shampoo
+3 - all-out
+4 - speaker
+5 - cinthol
+6 - kettle
+7 - surf
+8 - bag
