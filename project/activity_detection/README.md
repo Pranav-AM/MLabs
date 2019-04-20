@@ -1,6 +1,24 @@
 # Activity Detection module 
 
-* main.py - module code
-* demo.py 
+* To train the model, execute this command
+  ```bash
+   $ python main.py
+   ```
+   The trained model will be saved at [MLabs/data](../../data) as [act_rec_lstm.h5](../../data/act_rec_lstm.h5)
+   
+* To run the pre-trained model,
+  1) Change **TRAINED_MODEL = TRUE** in **config.ini** to **TRAINED_MODEL = FALSE**
+  2) Run the commmand
+      ```bash
+      $ python main.py
+      ```
+* To run the activity detection module on a new activity sequence,
+  1) Change **line 12** in **demo.py** to another sequence
+  2) Run the command
+      ```bash
+      $ python demo.py
+      ```
   
-  * Change folder name in line 12 to that of the image sequence to be predicted 
+  
+  
+
