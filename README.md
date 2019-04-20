@@ -13,6 +13,15 @@ Use computer vision to automate billing
 <img src="data/demo/final.gif" width=20% height="480" /> 
 </p>
 
+    
+## Project
+
+The project comprises of three modules:
+
+1) [Object Detection](project/activity_detection/)
+2) [Pose Estimation](project/activity_detection/)
+3) [Activity Detection](project/activity_detection/)
+
 ## Directory structure
     .
     ├── data
@@ -32,14 +41,6 @@ Use computer vision to automate billing
     ├── environment.yml                 # the exported anaconda environment file
     ├── Dockerfile
     └── README.md         
-    
-## Project
-
-The project comprises of three modules:
-
-1) [Object Detection](project/activity_detection/)
-2) [Pose Estimation](project/activity_detection/)
-3) [Activity Detection](project/activity_detection/)
 
 ## Getting Started
 
@@ -81,6 +82,8 @@ These instructions will get you a copy of the project up and running on your loc
 * To try running the project, goto the projects folder
     ```bash
     $ cd ../..
+    $ pwd
+    /home/username/**some-directories**/MLabs/project
     $ python main.py
     ```
 
