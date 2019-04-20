@@ -7,7 +7,7 @@ import ConfigParser
 import cv2
 
 config = ConfigParser.ConfigParser()
-config.read('../config.ini')
+config.read('activity_detection/config.ini')
 
 FRAME_PATH = config.get("DEFAULT", "FRAME_PATH")
 OBJECT_PATH = config.get("DEFAULT", "OBJECT_PATH")
@@ -17,6 +17,9 @@ INVENTORY_PATH = config.get("DEFAULT", "INVENTORY_PATH")
 IMAGE_PATH = config.get("DEFAULT", "IMAGE_PATH")
 
 SAVED_MODEL = config.get("ACTIVITY-DETECTION", "SAVED_MODEL")
+
+if(not(os.path.exists(IMAGE_PATH) and os.path.isdir(IMAGE_PATH))):
+    os.mkdir(IMAGE_PATH)
 
 MISSING_FILES = []
 
