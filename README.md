@@ -18,8 +18,8 @@ Use computer vision to automate billing
 
 The project comprises of three modules:
 
-1) [Object Detection](project/activity_detection/)
-2) [Pose Estimation](project/activity_detection/)
+1) [Object Detection](project/object_detection/)
+2) [Pose Estimation](project/pose_estimation/)
 3) [Activity Detection](project/activity_detection/)
 
 ## Directory structure
