@@ -1,8 +1,6 @@
-# Module code
+* Run the project code
+    ```bash
+    $ python main.py
+    ```
 
-### The project has three parts,
-* Object Detection
-* Pose Estimation
-* Activity Detection
 
-**main.py - the system code is not functional**
