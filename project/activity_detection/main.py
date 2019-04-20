@@ -14,7 +14,7 @@ from sklearn.metrics import accuracy_score
 import ConfigParser
 
 config = ConfigParser.ConfigParser()
-config.read('../../config.ini')
+config.read('config.ini')
 
 FRAME_PATH = '../' + config.get("DEFAULT", "FRAME_PATH")
 OBJECT_PATH = '../' + config.get("DEFAULT", "OBJECT_PATH")
